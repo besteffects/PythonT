@@ -17,5 +17,5 @@ class SiteTest(unittest.TestCase):
         self.driver.quit()
 
 
-if __name__ == "__main__": # means that the Python interpreter is executing the script, not importing it
+if __name__ == "__main__":  # means that the Python interpreter is executing the script, not importing it
     unittest.main()
