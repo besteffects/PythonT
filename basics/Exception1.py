@@ -1,3 +1,5 @@
+import sys
+
 DIGIT_MAP = {
     'zero': '0',
     'one': '1',
@@ -24,9 +26,22 @@ def convert(s):
         x = -1
         print("Conversion failed!")
     except TypeError:
-        print("TypeError test. Conversion failed!")
+        print(f"TypeError test. Conversion failed!")
         x = -1
     return x
+
+
+def convert_simple(s):
+    """Convert a string to an integer simplified"""
+    try:
+        number = ''
+        for token in s:
+            number += DIGIT_MAP[token]
+        return int(number)
+    except (KeyError, TypeError) as e:
+        print(f"Conversion error: {e!r}",
+              file=sys.stderr)
+    return -1
 
 
 if __name__ == '__main__':
@@ -34,3 +49,6 @@ if __name__ == '__main__':
     print(convert('one three three seven'.split()))
     print(convert('one three three seven ten'.split()))
     print(convert(512))
+    print(convert_simple('one three three seven'.split()))
+    print(convert_simple('one three three seven ten'.split()))
+    print(convert_simple(512))
