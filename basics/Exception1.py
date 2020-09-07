@@ -12,7 +12,8 @@ DIGIT_MAP = {
 }
 
 
-def convert(s):  # Converting a sequence of ints toa number
+def convert(s):
+    """Convert a string to an integer"""
     try:
         number = ''
         for token in s:
@@ -22,6 +23,9 @@ def convert(s):  # Converting a sequence of ints toa number
     except KeyError:
         x = -1
         print("Conversion failed!")
+    except TypeError:
+        print("TypeError test. Conversion failed!")
+        x = -1
     return x
 
 
@@ -29,3 +33,4 @@ if __name__ == '__main__':
     print('Testing exceptions: ')
     print(convert('one three three seven'.split()))
     print(convert('one three three seven ten'.split()))
+    print(convert(512))
