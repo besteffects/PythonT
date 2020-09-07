@@ -45,7 +45,7 @@ def convert_simple(s):
 
 
 if __name__ == '__main__':
-    print('Testing exceptions: ')
+    print('Testing exception: ')
     print(convert('one three three seven'.split()))
     print(convert('one three three seven ten'.split()))
     print(convert(512))
