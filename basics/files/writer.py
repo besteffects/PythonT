@@ -26,5 +26,11 @@ def write_sequence(filename, num):
     f.close()
 
 
+def write_sequence1(filename, num):
+    with open(filename, mode='wt', encoding='utf-8') as f:
+        f.writelines(f"{r}\n"
+                     for r in islice(sequence(), num + 1))
+
+
 if __name__ == '__main__':
     write_sequence(filename=sys.argv[1])
