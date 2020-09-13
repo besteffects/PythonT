@@ -102,7 +102,7 @@ def dimensions(filename):
         width_bytes = f.read(4)
         height_bytes = f.read(4)
 
-        return (_bytes_to_int32(width_bytes),
+        return (_bytes_to_int32(width_bytes),  # width and height are returned as a tuple
                 _bytes_to_int32(height_bytes))
 
 
