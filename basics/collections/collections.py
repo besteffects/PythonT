@@ -14,7 +14,7 @@ def simple_dictionary():
     performances = {'Ventriloquism': '9:00am', 'Snake Charmer': '12:00pm'}
     performances['Amazing Acrobatics'] = '2:00pm'
     performances['Enchanted Elephants'] = '5:00pm'
-    performances['Bearded Lady']='5:00pm'
+    performances['Bearded Lady'] = '5:00pm'
     print(performances)
     showtime = performances.get('Bearded Lady')
     if showtime is None:
@@ -38,9 +38,9 @@ def dict_loop():
         print(name, ':', time, sep='')
 
 
-def customer_order():
+def customer_order():  # TODO Add items to dictionary
     orders = []  # orders list to save the orders
-    menu = ['Cheeky Spam', 'Borsh', 'Chicken Soup']
+    menu = {'Cheeky Spam': 1, 'Borsh': 2, 'Chicken Soup': 3}
     order = input("What would you like to order? (Q to Quit)")
     while (True):
         if order == 'Cheeky Spam':
@@ -61,7 +61,7 @@ def customer_order():
 
 def customer_order1():
     orders = []
-    menu = ['Cheeky Spam', 'Borsh', 'Chicken Soup']
+    menu = {'Cheeky Spam', 'Borsh', 'Chicken Soup'}
     order = input("What would you like to order? (Q to Quit)")
     while (order.upper() != 'Q'):
         #  Find the order and add it to the list if it exists
@@ -72,4 +72,8 @@ def customer_order1():
             print("Menu item doesn't exist")
         #  See if the customer wants to order anything else
         order = input("Anything else? (Q to Quit)")
-    print(orders)
+    print("You ordered: " + order)
+
+
+if __name__ == "__main__":
+    customer_order()
