@@ -59,9 +59,9 @@ def customer_order():  # TODO Add items to dictionary
     print(orders)
 
 
-def customer_order1():
+def customer_order1():  # TODO Add items to dictionary
     orders = []
-    menu = {'Cheeky Spam', 'Borsh', 'Chicken Soup'}
+    menu = {'Cheeky Spam': 1, 'Borsh': 2, 'Chicken Soup': 3}
     order = input("What would you like to order? (Q to Quit)")
     while (order.upper() != 'Q'):
         #  Find the order and add it to the list if it exists
@@ -73,6 +73,24 @@ def customer_order1():
         #  See if the customer wants to order anything else
         order = input("Anything else? (Q to Quit)")
     print("You ordered: " + order)
+
+
+def guess_num():
+    import random
+
+    num = random.randint(1, 10)
+
+    guess = int(input('Guess a number between 1 and 10'))
+    times = 1
+    while guess != num:
+        guess = int(input('Guess again'))
+        times = times + 1
+        if (times == 3):
+            break
+    if (guess == num):
+        print('You win!')
+    else:
+        print('You lose! The number was ' + str(num))
 
 
 if __name__ == "__main__":
