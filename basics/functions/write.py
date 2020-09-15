@@ -11,14 +11,16 @@ def write_sales_log(order):
 
 
 # Writing data to a file
-performances = {'Ventriloquism': '9:00am',
-                'Snake Charmer': '12:00pm',
-                'Amazing Acrobatics': '2:00pm',
-                'Enchanted Elephants': '5:00pm'}
-schedule_file = open('schedule.txt', 'w')  # w - write, r - read, a - append
-for key, val in performances.items():
-    schedule_file.write((key + ' - ' + val) + '\n')
-schedule_file.close()
+def write_data_to_file():
+    # performances = {'Ventriloquism': '9:00am',
+    #                 'Snake Charmer': '12:00pm',
+    #                 'Amazing Acrobatics': '2:00pm',
+    #                 'Enchanted Elephants': '5:00pm'}
+    schedule_file = open('schedule.txt', 'r')
+    for line in schedule_file:
+        (show, time) = line.split(' - ')
+        print(show, time)
+    schedule_file.close()
 
 
 # Reading data
