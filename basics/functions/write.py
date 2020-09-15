@@ -10,6 +10,28 @@ def write_sales_log(order):
     file.close()
 
 
+# Writing data to a file
+performances = {'Ventriloquism': '9:00am',
+                'Snake Charmer': '12:00pm',
+                'Amazing Acrobatics': '2:00pm',
+                'Enchanted Elephants': '5:00pm'}
+schedule_file = open('schedule.txt', 'w')  # w - write, r - read, a - append
+for key, val in performances.items():
+    schedule_file.write((key + ' - ' + val) + '\n')
+schedule_file.close()
+
+
+# Reading data
+def read_dollar_menu():
+    dollar_spam = open('dollar_menu.txt', 'r')
+    dollar_menu = []
+    for line in dollar_spam:
+        line = line.strip()
+        dollar_menu.append(line)
+    print(dollar_menu)
+    dollar_spam.close()
+
+
 def main():
     order = {'Cheeky Spam': 1.0, 'Yonks Spam': 4.0}
     write_sales_log(order)
