@@ -12,19 +12,22 @@ def write_sales_log(order):
 
 # Writing data to a file
 def read_data_from_file():
-    performances1 ={}
+    performances1 = {}
     # performances = {'Ventriloquism': '9:00am',
     #                 'Snake Charmer': '12:00pm',
     #                 'Amazing Acrobatics': '2:00pm',
     #                 'Enchanted Elephants': '5:00pm'}
-    schedule_file = open('schedule.txt', 'r')
-    for line in schedule_file:
-        (show, time) = line.split(' - ')
-        performances1[show] = time
-        time = time.strip()
-        print(show, time)
-    schedule_file.close()
-    print(performances1)
+    try:
+        schedule_file = open('schedule.txt', 'r')
+    except FileNotFoundError as err:
+        print(err, "File doesn't exist")
+        for line in schedule_file:
+            (show, time) = line.split(' - ')
+            performances1[show] = time
+            time = time.strip()
+            print(show, time)
+        schedule_file.close()
+        print(performances1)
 
 
 # Reading data
