@@ -4,4 +4,7 @@ def print_color():
         print(f"Alien color is {alien_color}. You have earned 5 points")
     else:
         print(f"Alien color isn't green. You have earned `0 points")
-        
+
+
+if __name__ == '__main__':
+    print_color()
