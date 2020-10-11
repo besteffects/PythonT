@@ -1,6 +1,6 @@
 # Program for compressing files to .bz2 and .gz
 import os
-from basics.files.reader.compressed import bzipped,gzipped
+from basics.files.reader.reader.compressed import bzipped,gzipped
 
 extension_map = {
     '.bz2': bzipped.opener,
