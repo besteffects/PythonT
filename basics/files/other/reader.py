@@ -1,5 +1,4 @@
 """Read and print an integer series"""
-import sys
 
 
 def read_series(filename):
