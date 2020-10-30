@@ -26,10 +26,18 @@ class ShippingContainer:
 
     def __init__(self, owner_code, contents):
         self.contents = contents
-        self.bic = ShippingContainer._make_bic_code(
+        self.bic = self._make_bic_code(  # using self. to get a polymorphic behaviour
             owner_code=owner_code,
             serial=ShippingContainer._get_next_serial()) # calling class method
 
+
+class RefrigiratedShippingContainer(ShippingContainer):
+
+    @staticmethod
+    def _make_bic_code(owner_code, serial):
+        return iso6346.create(owner_code=owner_code,
+                              serial=str(serial).zfill(6),
+                              category='R')
 # from class_method import *
 # c7 = ShippingContainer.create_empty("YML")
 # c7.contents
