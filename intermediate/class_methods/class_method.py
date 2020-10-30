@@ -1,4 +1,6 @@
-import iso6346
+from intermediate.class_methods import iso6346
+
+
 class ShippingContainer:
 
     next_serial = 1337
@@ -6,7 +8,7 @@ class ShippingContainer:
     @staticmethod
     def _make_bic_code(owner_code, serial):
         return iso6346.create(owner_code=owner_code,
-                              serial=str(serial).zfill(6))
+                              serial=str(serial).zfill(6)) # ensuring it's 6 chars long
 
     @classmethod
     def _get_next_serial(cls):
@@ -19,14 +21,14 @@ class ShippingContainer:
         return cls(owner_code, contents=None)
 
     @classmethod
-    def create_withitems(cls, owner_code, items):
+    def create_with_items(cls, owner_code, items):
         return cls(owner_code, contents=list(items))
 
     def __init__(self, owner_code, contents):
         self.contents = contents
         self.bic = ShippingContainer._make_bic_code(
             owner_code=owner_code,
-            serial=ShippingContainer._get_next_serial())
+            serial=ShippingContainer._get_next_serial()) # calling class method
 
 # from class_method import *
 # c7 = ShippingContainer.create_empty("YML")
