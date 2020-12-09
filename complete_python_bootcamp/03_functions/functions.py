@@ -10,9 +10,11 @@ def employee_check(work_hours):
         else:
             pass
 
-        print(employee_of_month,current_max)
         return (employee_of_month,current_max)
 
 
 if __name__ == '__main__':
-    employee_check(work_hours)
+    result = employee_check(work_hours)
+    print(result)
+    name,hours = employee_check(work_hours)
+    print(name)
