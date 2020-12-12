@@ -85,6 +85,19 @@ def has_33(nums):
             return True
     return False
 
+# Given a string, return a string where for every character in the original there are three characters
+def paper_doll(text):
+    mylist = []
+    for i in range(0, len(text)):
+        mylist.append(text[i]*3)
+    return ''.join(mylist)
+
+def paper_doll1(text):
+    result = ''
+    for char in text:
+        result += char * 3
+    return result
+
 
 if __name__ == '__main__':
     # result = employee_check(work_hours)
