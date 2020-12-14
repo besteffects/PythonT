@@ -111,6 +111,40 @@ def blackjack(a, b, c):
     else:
         return 'BUST'
 
+# SPY GAME: Write a function that takes in a list of integers and returns True if it contains 007 in order
+#  spy_game([1,2,4,0,0,7,5]) --> True
+#  spy_game([1,0,2,4,0,5,7]) --> True
+#  spy_game([1,7,2,0,4,5,0]) --> False
+
+def spy_game(nums):
+    code = [0, 0, 7, 'x']
+
+    for num in nums:
+        if num == code[0]:
+            code.pop(0)  # code.remove(num) also works
+
+    return len(code) == 1
+
+# COUNT PRIMES: Write a function that returns the number of prime numbers that exist up to and including a given number¶
+# count_primes(100) --> 25
+# By convention, 0 and 1 are not prime.
+
+def count_primes(num):
+    primes = [2]
+    x = 3
+    if num < 2:  # for the case of num = 0 or 1
+        return 0
+    while x <= num:
+        for y in range(3,x,2):  # test all odd factors up to x-1
+            if x%y == 0:
+                x += 2
+                break
+        else:
+            primes.append(x)
+            x += 2
+    print(primes)
+    return len(primes)
+
 if __name__ == '__main__':
     # result = employee_check(work_hours)
     # print(result)
