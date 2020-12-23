@@ -16,11 +16,11 @@ class Account:
         self.balance = balance
 
     def __str__(self):
-        return f'Account owner: {self.owner}\nhas Account balance: {self.balance}'
+        return f'Account owner: {self.owner}\nHas Account balance: {self.balance}'
 
     def deposit(self, amount):
         print("Deposit Accepted")
-        return self.balance + amount
+        self.balance = self.balance + amount
 
     def withdraw(self, amount):
         if self.balance > amount:
