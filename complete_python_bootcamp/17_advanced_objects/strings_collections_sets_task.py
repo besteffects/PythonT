@@ -10,7 +10,6 @@ def round_to_decimal(num):
     round(num, 2)
 
 # Problem 3: Check if every letter in the string s is lower case
-
 def check_if_lowercase(my_string):
     my_string.islower()
 
@@ -19,3 +18,26 @@ def check_if_lowercase(my_string):
 def count_times(my_string):
     my_string = 'twywywtwywbwhsjhwuwshshwuwwwjdjdid'
     my_string.count('w')
+
+# Problem 5: Find the elements in set1 that are not in set2:
+
+
+def find_not_in_set(s1, s2):
+    print(s1.difference(s2))
+
+#Problem 6: Find all elements that are in either set:
+def find_not_in_either_sets(s1, s2):
+    print(s1.intersection(s2))
+
+
+# Problem 7: Create this dictionary: {0: 0, 1: 1, 2: 8, 3: 27, 4: 64} using a dictionary comprehension.
+def dict_comprenhension():
+    print({x: x**3 for x in range(5)})
+
+
+if __name__ == "__main__":
+    set1 = {2, 3, 1, 5, 6, 8}
+    set2 = {3, 1, 7, 5, 6, 8}
+    find_not_in_set(set1, set2)
+    find_not_in_either_sets(set1, set2)
+    dict_comprenhension()
