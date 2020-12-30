@@ -35,9 +35,23 @@ def dict_comprenhension():
     print({x: x**3 for x in range(5)})
 
 
+# Problem 8: Reverse the list below:
+def reverse_list():
+    list1 = [1, 2, 3, 4]
+    list1.reverse()
+    print(list1)
+
+# Problem 9: Sort the list below:
+def sort_list():
+    list1 = [1, 2, 3, 4]
+    list1.sort()
+    print(list1)
+
 if __name__ == "__main__":
     set1 = {2, 3, 1, 5, 6, 8}
     set2 = {3, 1, 7, 5, 6, 8}
     find_not_in_set(set1, set2)
     find_not_in_either_sets(set1, set2)
     dict_comprenhension()
+    reverse_list()
+    sort_list()
