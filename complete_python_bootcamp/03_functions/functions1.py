@@ -46,8 +46,25 @@ def up_low_colect(s):
     print(len(uppercase))
     print(len(lowercase))
 
+# Write a Python function that takes a list and returns a new list with unique elements of the first list.
+def unique_list(lst):
+    #  alternatively:
+    # s = set()
+    # for item in lst:
+    #     s.add(item)
+    # my_list = list(s)
+    return list(set(lst))
+
+# Write a Python function to multiply all the numbers in a list.
+def multiply(numbers):
+    result = 1
+    for i in numbers:
+        result = result*i
+    return result
 
 if __name__ == '__main__':
    # print(ran_check1(2, 5, 4))
    up_low("Hello Mr. Rogers, how are you this fine Tuesday?")
    up_low_colect("Hello Mr. Rogers, how are you this fine Tuesday?")
+   print(unique_list([1,1,1,1,2,2,3,3,3,3,4,5]))
+   print(multiply([1, 2, 3, -4]))
