@@ -62,9 +62,21 @@ def multiply(numbers):
         result = result*i
     return result
 
+# Write a Python function that checks whether a word or phrase is palindrome or not.
+def palindrome(s):
+    s1 = s.replace(" ", "")
+    return s1 == s1[::-1]
+
+def palindrome1(s):
+    s1 = s.replace(" ", "")
+    return s1 == ''.join(reversed(s1))
+
+
 if __name__ == '__main__':
    # print(ran_check1(2, 5, 4))
    up_low("Hello Mr. Rogers, how are you this fine Tuesday?")
    up_low_colect("Hello Mr. Rogers, how are you this fine Tuesday?")
    print(unique_list([1,1,1,1,2,2,3,3,3,3,4,5]))
    print(multiply([1, 2, 3, -4]))
+   print(palindrome('hel le h'))
+   print(palindrome1('hel le h'))
