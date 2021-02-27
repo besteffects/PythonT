@@ -27,7 +27,7 @@ def find_not_in_set(s1, s2):
 
 #Problem 6: Find all elements that are in either set:
 def find_not_in_either_sets(s1, s2):
-    print(s1.intersection(s2))
+    print(s1.union(s2))
 
 
 # Problem 7: Create this dictionary: {0: 0, 1: 1, 2: 8, 3: 27, 4: 64} using a dictionary comprehension.
