@@ -74,6 +74,14 @@ def unique_list(lst):
     return list(set(lst))
 
 
+def unique_list1(lst):
+    seen_numbers = []
+    for number in lst:
+        if number not in seen_numbers:
+            seen_numbers.append(number)
+    return seen_numbers
+
+
 # Write a Python function to multiply all the numbers in a list.
 def multiply(numbers):
     result = 1
